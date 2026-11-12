@@ -854,7 +854,7 @@ function main() {
   W('app/src/main/AndroidManifest.xml', genManifest(c, host));
   W('app/src/main/java/' + c.pkg.replace(/\./g, '/') + '/MainActivity.java', genJava(c, u, hosts));
   if (c.oneSignalId) W('app/src/main/java/' + c.pkg.replace(/\./g, '/') + '/App.java', genApp(c));
-  W('.gradle-tasks', 'assembleDebug assembleRelease' + (c.aab ? ' bundleRelease' : '') + '\n');
+  W('.gradle-tasks', 'assembleRelease' + (c.aab ? ' bundleRelease' : '') + '\n');
   W('app/src/main/res/layout/activity_main.xml', genLayout(c));
   W('app/src/main/res/values/strings.xml', '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n    <string name="app_name">' + xe(c.appName) + '</string>\n    <string name="offline_text">' + xe(c.offlineMsg) + '</string>\n    <string name="retry">Retry</string>\n</resources>\n');
   W('app/src/main/res/values/colors.xml', '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n    <color name="theme_color">' + c.themeColor + '</color>\n    <color name="splash_bg">' + c.splashBg + '</color>\n</resources>\n');
